@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>欢迎页面</title>
+        <!--[if IE 6]>
+            <script src="./pngfix.min.js"></script>
+            <script>
+            DD_belatedPNG.fix('.fix');
+            </script>
+        <![endif]-->
+        <style type="text/css">
+            html { filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+            body { margin:0; padding:0;}
+            .welcome { width:628px; height:476px; position:relative; overflow:hidden; z-index:0;}
+            .page { width:628px; height:476px; overflow:hidden; background:url(./bg.png) 0 0 no-repeat;}
+            .page .btn { overflow:hidden; z-index:10;}
+            .page .btn a { display:block; overflow:hidden; cursor:pointer; text-decoration:none; background:none; outline:none;}
+            .page .btn a img { display:block; border:none;}
+            .close { width:16px; height:16px; position:absolute; top:20px; right:20px;}
+            .close a { width:64px; height:16px;}
+            .close a:hover { margin-left:-16px;}
+            .close a:active { margin-left:-32px;}
+            .instant { width:130px; height:40px; position:absolute;bottom:20px; right:20px;}
+            .instant a { width:520px; height:40px;}
+            .instant a:hover { margin-left:-130px;}
+            .instant a:active { margin-left:-260px;}
+        </style>
+    </head>
+    <body ondragstart ="return false" >
+        <div class="welcome">
+            <div class="page">
+                <div class="btn instant">
+                    <a href="javascript:close(this);" id="navToNextPage"><img class="fix" src="./final.png" /></a>
+                </div>
+                <div class="btn close">
+                    <a href="javascript:close(this);"><img class="fix" src="./close.png" /></a>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var close = function() {
+                window.external.OnWelcomNotify("close");
+            }
+			
+			var StartInfoTips = function() {
+				window.external.OnWelcomNotify("StartInfoTips");
+			}
+			
+            var nextButton = document.getElementById('navToNextPage');
+            setTimeout(function(){
+                if(nextButton){
+                    nextButton.blur();
+                }
+            }, 10);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,5 @@
+主要是为测试Git功能
+1、测试Github的功能；
+2、Git与Github的关联；
+3、Github的SSH密码添加不成功；
+
